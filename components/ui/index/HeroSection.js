@@ -24,7 +24,7 @@ const HeroSection = () => {
                             We are a group of people <where></where> make Nethunter kernels for devices which are
                             unmaintained, having bad Power Management or not having Nethunter Kernel at all.
                         </Text>
-                        <Box mt={{ base: "1.2rem", md: "2rem" }}>
+                        <Box mt={{ base: "1.2rem", md: "2rem" }} transform={"auto"} skewX={"-5deg"}>
                             <PrimaryButton>Browse Now</PrimaryButton>
                         </Box>
                     </Box>

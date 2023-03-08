@@ -5,8 +5,10 @@ import { Box, Text } from "@chakra-ui/react";
 import useColors from "@/hooks/useColors";
 import HeroSection from "@/components/ui/index/HeroSection";
 import KernelsDeveloped from "@/components/ui/index/KernelsDeveloped";
+import { useState } from "react";
 
 export default function Home() {
+    const [devices, setDevices] = useState([]);
     return (
         <>
             <Head>
@@ -18,6 +20,9 @@ export default function Home() {
             <Box as="main">
                 <HeroSection />
                 <KernelsDeveloped />
+                {
+                    devices?.map(device=> )
+                }
             </Box>
         </>
     );
