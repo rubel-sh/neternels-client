@@ -7,7 +7,8 @@ const useColors = () => {
     const backgroundSvgColor = useColorModeValue("light.backgroundSvgColor", "dark.backgroundSvgColor");
     const CardBg = useColorModeValue("light.CardBg", "dark.CardBg");
     const CardText = useColorModeValue("light.CardText", "dark.CardText");
-    return { primaryColor, bodyBgColor, primaryTextColor, backgroundSvgColor, CardBg, CardText };
+    const descTitle = useColorModeValue("light.descTitle", "dark.descTitle");
+    return { primaryColor, bodyBgColor, primaryTextColor, backgroundSvgColor, CardBg, CardText, descTitle };
 };
 
 export default useColors;

@@ -13,7 +13,15 @@ const CardText = ({ children }) => (
 
 const DownloadBtn = ({ children }) => (
     <Link href="/download/ginkgo">
-        <Button rounded="xl" width="100%" fontSize="clamp(18px ,1.5vw,25px)">
+        <Button
+            as={motion.button}
+            whileTap={{ scale: 0.95 }}
+            _hover={{ boxShadow: `-3px 3px #4C5DBB`, transform: "translate(3px,-3px)" }}
+            bg={useColors().bodyBgColor}
+            rounded="xl"
+            width="100%"
+            fontSize="clamp(18px ,1.5vw,25px)"
+        >
             {children}
         </Button>
     </Link>
