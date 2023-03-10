@@ -3,6 +3,7 @@ import { Box, Button, GridItem, Image, SimpleGrid, Text, useColorMode } from "@c
 import pixel_phones from "@/assests/images/pixel_phones.png";
 import { motion } from "framer-motion";
 import useColors from "@/hooks/useColors";
+import Link from "next/link";
 
 const CardText = ({ children }) => (
     <Text fontSize="clamp(16px,1vw,22px)" fontWeight={500}>
@@ -11,9 +12,11 @@ const CardText = ({ children }) => (
 );
 
 const DownloadBtn = ({ children }) => (
-    <Button rounded="xl" width="100%" fontSize="clamp(18px ,1.5vw,25px)">
-        {children}
-    </Button>
+    <Link href="/download/ginkgo">
+        <Button rounded="xl" width="100%" fontSize="clamp(18px ,1.5vw,25px)">
+            {children}
+        </Button>
+    </Link>
 );
 
 const StatusText = ({ children }) => {

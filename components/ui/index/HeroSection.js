@@ -17,7 +17,12 @@ const HeroSection = () => {
                         <Text color={useColors().primaryColor} fontWeight={"500"}>
                             WHO ARE WE?
                         </Text>
-                        <Text fontSize={useFontSize().headings} fontWeight={"700"} lineHeight={"normal"}>
+                        <Text
+                            mb="clamp(1rem,3vw,2rem)"
+                            fontSize={useFontSize().headings}
+                            fontWeight={"700"}
+                            lineHeight={"110%"}
+                        >
                             Kernel Developers.
                         </Text>
                         <Text fontWeight={"normal"} mr={{ lg: "5rem" }}>

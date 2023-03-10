@@ -43,13 +43,15 @@ export default function Header() {
                 <PrimaryContainer>
                     <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
                         <Box className="glitch-wrapper">
-                            <Text
-                                className="glitch"
-                                data-glitch="NetErnels"
-                                fontSize={{ base: "1.5rem", md: "2rem", lg: "3rem" }}
-                            >
-                                NetErnels
-                            </Text>
+                            <Link href="/">
+                                <Text
+                                    className="glitch"
+                                    data-glitch="NetErnels"
+                                    fontSize={{ base: "1.5rem", md: "2rem", lg: "3rem" }}
+                                >
+                                    NetErnels
+                                </Text>
+                            </Link>
                         </Box>
 
                         <Flex alignItems={"center"}>
