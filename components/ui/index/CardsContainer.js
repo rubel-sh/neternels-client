@@ -29,11 +29,12 @@ const Card = () => {
     return (
         <GridItem
             bg={useColors().CardBg}
-            cursor="pointer"
             overflow="hidden"
             rounded={{ base: "3xl", md: "xl", lg: "3xl" }}
+            border="2px solid transparent"
+            transition="border 0.3s ease-out"
             _hover={{
-                boxShadow: "box-shadow: rgba(17, 17, 26, 0.5) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px",
+                border: `2px solid rgb(2 74 217 / 50%)`,
             }}
             maxW="400px"
         >
@@ -79,7 +80,7 @@ const Card = () => {
                 <Image src={pixel_phones.src} width="full" />
             </Box>
             {/* Other Informations */}
-            <Box px="clamp(10px ,1.5vw,15px)" py="clamp(5px, 2.5vw,15px)">
+            <Box px="clamp(20px ,1.5vw,25px)" py="clamp(5px, 2.5vw,15px)">
                 {/* Device Name */}
                 <Text fontSize="clamp(20px,3vw,28px)" fontWeight={700} mb="clamp(10px,1.5vw,15px)">
                     Google Pixel 6 Pro
