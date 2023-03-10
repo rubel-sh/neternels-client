@@ -110,8 +110,9 @@ const CardsContainer = ({ devices }) => {
                     gridTemplateColumns={{ base: "1fr", md: "repeat(2,1fr)", lg: "repeat(3,1fr)" }}
                     gap={{ base: "40px", md: "20px", lg: "40px" }}
                 >
-                    {devices?.map((device) => (
-                        <Card />
+                    {devices?.map((device, i) => (
+                        // Change key with device codename to device later
+                        <Card key={i} />
                     ))}
                 </SimpleGrid>
             </PrimaryContainer>
