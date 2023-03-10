@@ -6,9 +6,10 @@ import useColors from "@/hooks/useColors";
 import HeroSection from "@/components/ui/index/HeroSection";
 import KernelsDeveloped from "@/components/ui/index/KernelsDeveloped";
 import { useState } from "react";
+import CardsContainer from "@/components/ui/index/CardsContainer";
 
 export default function Home() {
-    const [devices, setDevices] = useState([]);
+    const [devices, setDevices] = useState([...Array(12)]);
     return (
         <>
             <Head>
@@ -20,9 +21,7 @@ export default function Home() {
             <Box as="main">
                 <HeroSection />
                 <KernelsDeveloped />
-                {
-                    devices?.map(device=> )
-                }
+                <CardsContainer devices={devices} />
             </Box>
         </>
     );

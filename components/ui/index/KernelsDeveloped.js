@@ -1,7 +1,7 @@
 import PrimaryContainer from "@/components/widgets/PrimaryContainer";
 import useColors from "@/hooks/useColors";
 import useFontSize from "@/hooks/useFontSize";
-import { Box, Flex, Text, useColorMode } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, useColorMode } from "@chakra-ui/react";
 
 const KernelsDeveloped = () => {
     const { colorMode } = useColorMode();
@@ -36,7 +36,7 @@ const KernelsDeveloped = () => {
                         flexWrap="wrap"
                     >
                         {devices?.map((device) => (
-                            <Box
+                            <Button
                                 px="25px"
                                 py="10px"
                                 border={"2px solid"}
@@ -52,7 +52,7 @@ const KernelsDeveloped = () => {
                                 }}
                             >
                                 {device}
-                            </Box>
+                            </Button>
                         ))}
                     </Flex>
                 </Box>

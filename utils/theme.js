@@ -6,12 +6,18 @@ const colors = {
         backgroundSvgColor: "#EDEDED",
         primaryTextColor: "#181823",
         bodyBgColor: "#FFFFFF",
+        // Project Card
+        CardBg: "#F1F1F1",
+        CardText: "#161A22BE",
     },
     dark: {
         primaryColor: "#8080F4",
         backgroundSvgColor: "#181823",
-        primaryTextColor: "#FFFFFF",
+        primaryTextColor: "#F0F0F0",
         bodyBgColor: "#1a202c",
+        // Project Card
+        CardBg: "#161a22",
+        CardText: "#E9E9E9D5",
     },
 };
 
