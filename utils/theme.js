@@ -2,7 +2,8 @@ const { extendTheme } = require("@chakra-ui/react");
 
 const colors = {
     light: {
-        primaryColor: "#4E59D9",
+        // primaryColor: "#4E59D9",
+        primaryColor: "#087ea4",
         backgroundSvgColor: "#EDEDED",
         primaryTextColor: "#252525",
         bodyBgColor: "#FFFFFF",
@@ -13,7 +14,8 @@ const colors = {
         descTitle: "#949494",
     },
     dark: {
-        primaryColor: "#8080F4",
+        // primaryColor: "#8080F4",
+        primaryColor: "#087ea4",
         backgroundSvgColor: "#181823",
         primaryTextColor: "#ECECEC",
         bodyBgColor: "#1a202c",

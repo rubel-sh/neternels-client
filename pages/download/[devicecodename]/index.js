@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import { BsTelegram, BsGithub } from "react-icons/bs";
 import useColors from "@/hooks/useColors";
 import Link from "next/link";
+import useBorders from "@/hooks/useBorders";
+import KernelChangelogsAccordion from "@/components/ui/download/KernelChangelogsAccordion";
 
 const HeadingTitle = ({ children }) => (
-    <Text fontSize="clamp(1.1rem,3vw,2rem)" fontWeight={700} borderLeft="2px solid #5c5eeae8" pl="10px">
+    <Text fontSize="clamp(1.1rem,2vw,1.6rem)" fontWeight={700} borderLeft="2px solid #5c5eeae8" pl="10px">
         {children}
     </Text>
 );
@@ -42,12 +44,12 @@ const DeviceInfoContainer = ({ children }) => (
     </SimpleGrid>
 );
 const DescTitle = ({ children }) => (
-    <Text fontSize="clamp(1rem,2vw,1.1rem)" fontWeight={300} color={useColors().descTitle} lineHeight="100%">
+    <Text fontSize="clamp(0.9rem,1.5vw,0.9rem)" fontWeight={300} color={useColors().descTitle} lineHeight="100%">
         {children}
     </Text>
 );
 const DescText = ({ children }) => (
-    <Text fontSize="clamp(1.1rem,2vw,1.4rem)" fontWeight={600}>
+    <Text fontSize="clamp(1rem,2vw,1.2rem)" fontWeight={600}>
         {children}
     </Text>
 );
@@ -77,12 +79,12 @@ const DeviceDetails = () => {
                     {/* Create three column , left device info, center image, right changelog */}
                     <SimpleGrid
                         gridTemplateColumns={{ base: "1fr", md: "1fr 1fr", lg: "repeat(3,1fr)" }}
-                        rowGap="3rem"
+                        rowGap="1rem"
                         columnGap={{ md: "2rem", lg: "10px" }}
                     >
                         {/* Left Container */}
                         <GridItem order={{ base: 2, md: 2, lg: 1 }}>
-                            <HeadingTitle>Device Information</HeadingTitle>
+                            {/* <HeadingTitle>Device Information</HeadingTitle> */}
                             <DescContainer>
                                 <Box>
                                     <DescTitle>Brand </DescTitle>
@@ -103,7 +105,9 @@ const DeviceDetails = () => {
                                     </Box>
                                     <Box>
                                         <DescTitle>RAM</DescTitle>
-                                        <DeviceInfoText>12GB</DeviceInfoText>
+                                        <DeviceInfoText>
+                                            12<small>GB</small>
+                                        </DeviceInfoText>
                                     </Box>
                                     <Box>
                                         <DescTitle>Released</DescTitle>
@@ -111,7 +115,9 @@ const DeviceDetails = () => {
                                     </Box>
                                     <Box>
                                         <DescTitle>Battery</DescTitle>
-                                        <DeviceInfoText>5003</DeviceInfoText>
+                                        <DeviceInfoText>
+                                            5003<small>mAh</small>
+                                        </DeviceInfoText>
                                     </Box>
                                 </DeviceInfoContainer>
                             </DescContainer>
@@ -132,23 +138,24 @@ const DeviceDetails = () => {
                                     width="80%"
                                 />
                                 <Link href="/download/ginkgo">
-                                    <Button
+                                    {/* <Button
                                         as={motion.button}
                                         whileTap={{ scale: 0.95 }}
-                                        _hover={{ boxShadow: `-3px 3px #4C5DBB`, transform: "translate(3px,-3px)" }}
+                                        _hover={{ boxShadow: `-3px 3px #087ea4`, transform: "translate(3px,-3px)" }}
                                         bg={useColors().bodyBgColor}
                                         rounded="xl"
                                         width="100%"
                                         fontSize="clamp(18px ,1.5vw,25px)"
+                                        border={useBorders().cardBorder}
                                     >
                                         Download
-                                    </Button>
+                                    </Button> */}
                                 </Link>
                             </VStack>
                         </GridItem>
                         {/* Right Container */}
                         <GridItem order={{ base: 3, md: 3, lg: 3 }}>
-                            <HeadingTitle>Kernel Information</HeadingTitle>
+                            {/* <HeadingTitle>Kernel Information</HeadingTitle> */}
                             <DescContainer>
                                 <Box>
                                     <DescTitle>Status</DescTitle>
@@ -190,6 +197,29 @@ const DeviceDetails = () => {
                                         </Link>
                                     </HStack>
                                 </Box>
+                            </DescContainer>
+                        </GridItem>
+                    </SimpleGrid>
+                    <SimpleGrid
+                        mt="1rem"
+                        gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+                        rowGap="1rem"
+                        columnGap={{ md: "2rem", lg: "30px" }}
+                    >
+                        {/* Change Logs */}
+                        <GridItem>
+                            <DescContainer>
+                                <DescText>Kernel Changelogs</DescText>
+                                <KernelChangelogsAccordion />
+                            </DescContainer>
+                        </GridItem>
+                        {/* Comments */}
+                        <GridItem>
+                            <DescContainer>
+                                <DescText>Comments</DescText>
+                                <Text fontSize="4xl" fontWeight={500}>
+                                    COMING SOON
+                                </Text>
                             </DescContainer>
                         </GridItem>
                     </SimpleGrid>
