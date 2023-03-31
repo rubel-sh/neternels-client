@@ -35,8 +35,9 @@ const KernelsDeveloped = () => {
                         gap={{ base: "0.8rem", lg: "1.2rem" }}
                         flexWrap="wrap"
                     >
-                        {devices?.map((device) => (
+                        {devices?.map((device, i) => (
                             <Button
+                                key={i}
                                 px="25px"
                                 py="10px"
                                 border={"2px solid"}

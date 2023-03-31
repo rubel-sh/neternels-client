@@ -1,7 +1,7 @@
 import React from "react";
 
-const index = () => {
-    return <div>Add Brand</div>;
+const AddBrand = () => {
+    return <div>Adssd nrands</div>;
 };
 
-export default index;
+export default AddBrand;

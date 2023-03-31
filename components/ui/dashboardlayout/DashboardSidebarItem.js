@@ -2,12 +2,14 @@ import useColors from "@/hooks/useColors";
 import { Box, HStack, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 const DashboardSidebarItem = ({ link }) => {
     const { icon, title, url } = link;
+    const router = useRouter();
     return (
-        <Link href={url}>
+        <div onClick={() => router.push(url)}>
             <Box
                 cursor="pointer"
                 as={motion.div}
@@ -37,9 +39,16 @@ const DashboardSidebarItem = ({ link }) => {
                     {icon}
                 </Box>
                 <Text>{title}</Text>
+                {title === "Kernel Requests" && <NewCount>20</NewCount>}
             </Box>
-        </Link>
+        </div>
     );
 };
+
+const NewCount = ({ children }) => (
+    <Box bg="#087DA431" w={7} h={7} display="grid" placeItems="Center" rounded="md">
+        <Text color={useColors().primaryColor}>{children}</Text>
+    </Box>
+);
 
 export default DashboardSidebarItem;
