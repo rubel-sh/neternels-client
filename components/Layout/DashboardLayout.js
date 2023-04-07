@@ -49,9 +49,9 @@ const DashboardLayout = ({ pageProps }) => {
                 <DashboardSidebar navLinks={navLinks} />
             </GridItem>
             <GridItem>
-                <Text fontSize={"4xl"} fontWeight={600} textAlign="center">
+                <Box fontSize={"4xl"} fontWeight={600} textAlign="center">
                     <div {...pageProps} />
-                </Text>
+                </Box>
             </GridItem>
         </SimpleGrid>
     );
