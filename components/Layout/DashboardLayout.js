@@ -9,7 +9,7 @@ import { BiMessageAdd } from "react-icons/bi";
 import { SiAzurefunctions, SiGoogletagmanager } from "react-icons/si";
 import AddBrand from "@/pages/dashboard/addbrand";
 
-const DashboardLayout = ({ pageProps }) => {
+const DashboardLayout = ({ children }) => {
     const router = useRouter();
     const navLinks = [
         {
@@ -50,7 +50,7 @@ const DashboardLayout = ({ pageProps }) => {
             </GridItem>
             <GridItem>
                 <Box fontSize={"4xl"} fontWeight={600} textAlign="center">
-                    <div {...pageProps} />
+                    {children}
                 </Box>
             </GridItem>
         </SimpleGrid>
