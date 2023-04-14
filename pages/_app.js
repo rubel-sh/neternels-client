@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 import HomepageLayout from "@/components/Layout/HomepageLayout";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import Header from "@/components/sharedComponents/Header";
+import { Provider } from "react-redux";
+import store from "@/redux/store";
 
 export default function App({ Component, pageProps }) {
     const router = useRouter();
@@ -29,7 +31,9 @@ export default function App({ Component, pageProps }) {
     };
     return (
         <AuthProvider>
-            <ChakraProvider theme={customTheme}>{decideLayout()}</ChakraProvider>
+            <Provider store={store}>
+                <ChakraProvider theme={customTheme}>{decideLayout()}</ChakraProvider>
+            </Provider>
         </AuthProvider>
     );
 }

@@ -5,9 +5,18 @@ import { Box, Button, Flex, Grid, GridItem, Image, SimpleGrid, Text, useColorMod
 import useColors from "@/hooks/useColors";
 import PrimaryButton from "@/components/widgets/PrimaryButton";
 import HeroBackgroundSvg from "@/assests/svg/HeroBackgroundSvg";
+import { useDispatch, useSelector } from "react-redux";
+import { setTitle } from "@/redux/features/changeTitle/changeTitleSlice";
 
 const HeroSection = () => {
     const { colorMode } = useColorMode();
+    // Accessing State from Redux Store
+    const { value } = useSelector((state) => state.changeTitle);
+
+    // Updating state from Redux Store
+    const dispatch = useDispatch();
+
+    console.log(value);
     return (
         <Box position={"relative"} py={{ base: "3rem", lg: "5rem" }}>
             <PrimaryContainer>
@@ -22,8 +31,9 @@ const HeroSection = () => {
                             fontSize={useFontSize().headings}
                             fontWeight={"700"}
                             lineHeight={"110%"}
+                            onClick={() => dispatch(setTitle("Kernel Maintainers"))}
                         >
-                            Kernel Developers.
+                            {value}
                         </Text>
                         <Text fontWeight={"normal"} mr={{ lg: "5rem" }}>
                             We are a group of people <where></where> make Nethunter kernels for devices which are
