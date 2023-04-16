@@ -14,6 +14,12 @@ export default function Home() {
     const [devices, setDevices] = useState([...Array(12)]);
     return (
         <>
+            <Head>
+                <title>NetErnels - Homepage</title>
+                <meta name="description" content="neternels kernel" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <HomepageLayout>
                 <HeroSection />
                 <KernelsDeveloped />

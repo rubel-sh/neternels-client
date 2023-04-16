@@ -10,29 +10,31 @@ import { Provider } from "react-redux";
 import store from "@/redux/store";
 
 export default function App({ Component, pageProps }) {
-    const router = useRouter();
-    const { pathname } = router;
+    // const router = useRouter();
+    // const { pathname } = router;
 
-    const decideLayout = () => {
-        if (pathname.startsWith("/dashboard")) {
-            return (
-                <DashboardLayout>
-                    <Component {...pageProps} />
-                </DashboardLayout>
-            );
-        }
+    // const decideLayout = () => {
+    //     if (pathname.startsWith("/dashboard")) {
+    //         return (
+    //             <DashboardLayout>
+    //                 <Component {...pageProps} />
+    //             </DashboardLayout>
+    //         );
+    //     }
 
-        return (
-            <HomepageLayout>
-                <Header />
-                <Component {...pageProps} />
-            </HomepageLayout>
-        );
-    };
+    //     return (
+    //         <HomepageLayout>
+    //             <Header />
+    //             <Component {...pageProps} />
+    //         </HomepageLayout>
+    //     );
+    // };
     return (
         <AuthProvider>
             <Provider store={store}>
-                <ChakraProvider theme={customTheme}>{decideLayout()}</ChakraProvider>
+                <ChakraProvider theme={customTheme}>
+                    <Component {...pageProps} />
+                </ChakraProvider>
             </Provider>
         </AuthProvider>
     );

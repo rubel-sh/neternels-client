@@ -15,6 +15,7 @@ const DashboardSidebarItem = ({ link }) => {
                 as={motion.div}
                 whileHover={{ scale: 1.05, backgroundColor: "#087DA431" }}
                 whileTap={{ scale: 0.95 }}
+                bg={router.pathname === url && "#087DA431"}
                 w="full"
                 gap="1.1rem"
                 display="flex"

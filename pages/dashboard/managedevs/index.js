@@ -1,7 +1,12 @@
+import DashboardLayout from "@/components/Layout/DashboardLayout";
 import React from "react";
 
 const index = () => {
-    return <div>Manage Devs</div>;
+    return (
+        <DashboardLayout>
+            <div>Manage Devs</div>
+        </DashboardLayout>
+    );
 };
 
 export default index;

@@ -47,7 +47,7 @@ export default function Header() {
                                 <Text
                                     className="glitch"
                                     data-glitch="NetErnels"
-                                    fontSize={{ base: "1.5rem", md: "2rem", lg: "3rem" }}
+                                    fontSize={{ base: "1.5rem", md: "2rem", lg: "2.2rem" }}
                                 >
                                     NetErnels
                                 </Text>

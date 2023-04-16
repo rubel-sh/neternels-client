@@ -2,8 +2,10 @@ import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
 import DashboardSidebarItem from "../ui/dashboardlayout/DashboardSidebarItem";
+import { useRouter } from "next/router";
 
 const DashboardSidebar = ({ navLinks }) => {
+    const router = useRouter();
     return (
         <Box bg={"#0A0A0A10"} minH="85vh" p="1rem">
             <Text fontSize={26} fontWeight={600}>

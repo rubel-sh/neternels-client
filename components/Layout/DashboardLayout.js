@@ -8,14 +8,14 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { BiMessageAdd } from "react-icons/bi";
 import { SiAzurefunctions, SiGoogletagmanager } from "react-icons/si";
 import AddBrand from "@/pages/dashboard/addbrand";
+import Header from "../sharedComponents/Header";
 
 const DashboardLayout = ({ children }) => {
-    const router = useRouter();
     const navLinks = [
         {
             icon: <AiFillAppstore />,
             title: "Dashboard",
-            url: "/dashboard/dashboard",
+            url: "/dashboard/",
         },
         {
             icon: <TbBrandAdobe />,
@@ -44,16 +44,19 @@ const DashboardLayout = ({ children }) => {
         },
     ];
     return (
-        <SimpleGrid gridTemplateColumns="280px 1fr" h={"full"}>
-            <GridItem>
-                <DashboardSidebar navLinks={navLinks} />
-            </GridItem>
-            <GridItem>
-                <Box fontSize={"4xl"} fontWeight={600} textAlign="center">
-                    {children}
-                </Box>
-            </GridItem>
-        </SimpleGrid>
+        <>
+            <Header />
+            <SimpleGrid gridTemplateColumns="280px 1fr" h={"full"}>
+                <GridItem>
+                    <DashboardSidebar navLinks={navLinks} />
+                </GridItem>
+                <GridItem>
+                    <Box fontSize={"4xl"} fontWeight={600} textAlign="center">
+                        {children}
+                    </Box>
+                </GridItem>
+            </SimpleGrid>
+        </>
     );
 };
 
