@@ -116,16 +116,15 @@ const AddBrand = ({}) => {
                         <ModalCloseButton />
                         <ModalBody>
                             <form onSubmit={handleSubmit}>
-                                <FormControl isRequired>
+                                <FormControl>
                                     <FormLabel>Device Name</FormLabel>
                                     <Input name="deviceName" placeholder="Device Name" />
                                 </FormControl>
-                                <PrimaryButton type="submit">Submit</PrimaryButton>
+                                <Box py="5">
+                                    <PrimaryButton type="submit">Submit</PrimaryButton>
+                                </Box>
                             </form>
                         </ModalBody>
-                        <ModalFooter>
-                            <Button onClick={onClose}>Close</Button>
-                        </ModalFooter>
                     </ModalContent>
                 </Modal>
             </DashboardLayout>
