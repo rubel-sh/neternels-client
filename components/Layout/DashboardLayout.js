@@ -51,7 +51,7 @@ const DashboardLayout = ({ children }) => {
                     <DashboardSidebar navLinks={navLinks} />
                 </GridItem>
                 <GridItem>
-                    <Box fontSize={"4xl"} fontWeight={600} textAlign="center">
+                    <Box fontSize={"4xl"} fontWeight={600} textAlign="center" px={4} py="5">
                         {children}
                     </Box>
                 </GridItem>

@@ -1,7 +1,7 @@
 import useColors from "@/hooks/useColors";
 import { Button } from "@chakra-ui/react";
 
-const PrimaryButton = ({ children }) => {
+const PrimaryButton = ({ children, type }) => {
     return (
         <Button
             color={useColors().primaryColor}
@@ -10,6 +10,7 @@ const PrimaryButton = ({ children }) => {
             px={{ base: "2rem" }}
             rounded={0}
             bg={"transparent"}
+            type={type}
         >
             {children}
         </Button>

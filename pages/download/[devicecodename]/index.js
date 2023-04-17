@@ -9,6 +9,7 @@ import Link from "next/link";
 import useBorders from "@/hooks/useBorders";
 import KernelChangelogsAccordion from "@/components/ui/download/KernelChangelogsAccordion";
 import HomepageLayout from "@/components/Layout/HomepageLayout";
+import Tilt from "react-parallax-tilt";
 
 const HeadingTitle = ({ children }) => (
     <Text fontSize="clamp(1.1rem,2vw,1.6rem)" fontWeight={700} borderLeft="2px solid #5c5eeae8" pl="10px">
@@ -87,42 +88,54 @@ const DeviceDetails = () => {
                             {/* Left Container */}
                             <GridItem order={{ base: 2, md: 2, lg: 1 }}>
                                 {/* <HeadingTitle>Device Information</HeadingTitle> */}
-                                <DescContainer>
-                                    <Box>
-                                        <DescTitle>Brand </DescTitle>
-                                        <DescText>Google</DescText>
-                                    </Box>
-                                    <Box>
-                                        <DescTitle>Model</DescTitle>
-                                        <DescText>Google Pixel 6 Pro</DescText>
-                                    </Box>
-                                    <Box>
-                                        <DescTitle>Codename</DescTitle>
-                                        <DescText>Raven</DescText>
-                                    </Box>
-                                    <DeviceInfoContainer>
+                                <Tilt
+                                    perspective={500}
+                                    gyroscope={true}
+                                    glareEnable={true}
+                                    glareMaxOpacity={0.2}
+                                    glareBorderRadius={"30px"}
+                                    tiltReverse={true}
+                                    tiltMaxAngleX={4}
+                                    tiltMaxAngleY={4}
+                                    transitionSpeed={300}
+                                >
+                                    <DescContainer>
                                         <Box>
-                                            <DescTitle>Chipset</DescTitle>
-                                            <DeviceInfoText>Google Tensor</DeviceInfoText>
+                                            <DescTitle>Brand </DescTitle>
+                                            <DescText>Google</DescText>
                                         </Box>
                                         <Box>
-                                            <DescTitle>RAM</DescTitle>
-                                            <DeviceInfoText>
-                                                12<small>GB</small>
-                                            </DeviceInfoText>
+                                            <DescTitle>Model</DescTitle>
+                                            <DescText>Google Pixel 6 Pro</DescText>
                                         </Box>
                                         <Box>
-                                            <DescTitle>Released</DescTitle>
-                                            <DeviceInfoText>Oct 21, 2021</DeviceInfoText>
+                                            <DescTitle>Codename</DescTitle>
+                                            <DescText>Raven</DescText>
                                         </Box>
-                                        <Box>
-                                            <DescTitle>Battery</DescTitle>
-                                            <DeviceInfoText>
-                                                5003<small>mAh</small>
-                                            </DeviceInfoText>
-                                        </Box>
-                                    </DeviceInfoContainer>
-                                </DescContainer>
+                                        <DeviceInfoContainer>
+                                            <Box>
+                                                <DescTitle>Chipset</DescTitle>
+                                                <DeviceInfoText>Google Tensor</DeviceInfoText>
+                                            </Box>
+                                            <Box>
+                                                <DescTitle>RAM</DescTitle>
+                                                <DeviceInfoText>
+                                                    12<small>GB</small>
+                                                </DeviceInfoText>
+                                            </Box>
+                                            <Box>
+                                                <DescTitle>Released</DescTitle>
+                                                <DeviceInfoText>Oct 21, 2021</DeviceInfoText>
+                                            </Box>
+                                            <Box>
+                                                <DescTitle>Battery</DescTitle>
+                                                <DeviceInfoText>
+                                                    5003<small>mAh</small>
+                                                </DeviceInfoText>
+                                            </Box>
+                                        </DeviceInfoContainer>
+                                    </DescContainer>
+                                </Tilt>
                             </GridItem>
                             {/* Center Container */}
                             <GridItem
@@ -131,7 +144,7 @@ const DeviceDetails = () => {
                                 justifySelf="center"
                                 alignSelf="center"
                             >
-                                <VStack>
+                                <VStack alignItems={"center"} justifyContent={"center"}>
                                     <Image
                                         as={motion.img}
                                         initial={{ scale: 0.95 }}
@@ -139,6 +152,7 @@ const DeviceDetails = () => {
                                         src={mobileWithCase.src}
                                         width="80%"
                                     />
+
                                     <Link href="/download/ginkgo">
                                         {/* <Button
                                         as={motion.button}
@@ -158,48 +172,60 @@ const DeviceDetails = () => {
                             {/* Right Container */}
                             <GridItem order={{ base: 3, md: 3, lg: 3 }}>
                                 {/* <HeadingTitle>Kernel Information</HeadingTitle> */}
-                                <DescContainer>
-                                    <Box>
-                                        <DescTitle>Status</DescTitle>
-                                        <Status active={true}>Active</Status>
-                                    </Box>
-                                    <Box w="full">
-                                        <DescTitle>Maintainer</DescTitle>
-                                        <HStack justifyContent="space-between" w="full">
-                                            <DescText>Rubel Hossain</DescText>
-                                            {/* Social Links */}
-                                            <HStack fontSize="1.5rem" columnGap="15px">
+                                <Tilt
+                                    perspective={500}
+                                    gyroscope={true}
+                                    glareEnable={true}
+                                    glareMaxOpacity={0.2}
+                                    glareBorderRadius={"30px"}
+                                    tiltReverse={true}
+                                    tiltMaxAngleX={4}
+                                    tiltMaxAngleY={4}
+                                    transitionSpeed={300}
+                                >
+                                    <DescContainer>
+                                        <Box>
+                                            <DescTitle>Status</DescTitle>
+                                            <Status active={true}>Active</Status>
+                                        </Box>
+                                        <Box w="full">
+                                            <DescTitle>Maintainer</DescTitle>
+                                            <HStack justifyContent="space-between" w="full">
+                                                <DescText>Rubel Hossain</DescText>
+                                                {/* Social Links */}
+                                                <HStack fontSize="1.5rem" columnGap="15px">
+                                                    <Link href="#">
+                                                        <BsTelegram />
+                                                    </Link>
+                                                    <Link href="#">
+                                                        <BsGithub />
+                                                    </Link>
+                                                </HStack>
+                                            </HStack>
+                                        </Box>
+                                        <Box>
+                                            <DescTitle>Supports</DescTitle>
+                                            <DescText>Android 13</DescText>
+                                        </Box>
+                                        <Box>
+                                            <DescTitle>Kernel Version</DescTitle>
+                                            <DescText>4.14.690</DescText>
+                                        </Box>
+                                        <Box>
+                                            <DescTitle>Last Build</DescTitle>
+                                            <DescText>14 February 2023</DescText>
+                                        </Box>
+                                        <Box w="full">
+                                            <DescTitle>Support Groups</DescTitle>
+                                            <HStack justifyContent="space-between" w="full">
+                                                <DescText>Telegram</DescText>
                                                 <Link href="#">
-                                                    <BsTelegram />
-                                                </Link>
-                                                <Link href="#">
-                                                    <BsGithub />
+                                                    <BsTelegram fontSize="1.5rem" />
                                                 </Link>
                                             </HStack>
-                                        </HStack>
-                                    </Box>
-                                    <Box>
-                                        <DescTitle>Supports</DescTitle>
-                                        <DescText>Android 13</DescText>
-                                    </Box>
-                                    <Box>
-                                        <DescTitle>Kernel Version</DescTitle>
-                                        <DescText>4.14.690</DescText>
-                                    </Box>
-                                    <Box>
-                                        <DescTitle>Last Build</DescTitle>
-                                        <DescText>14 February 2023</DescText>
-                                    </Box>
-                                    <Box w="full">
-                                        <DescTitle>Support Groups</DescTitle>
-                                        <HStack justifyContent="space-between" w="full">
-                                            <DescText>Telegram</DescText>
-                                            <Link href="#">
-                                                <BsTelegram fontSize="1.5rem" />
-                                            </Link>
-                                        </HStack>
-                                    </Box>
-                                </DescContainer>
+                                        </Box>
+                                    </DescContainer>
+                                </Tilt>
                             </GridItem>
                         </SimpleGrid>
                         <SimpleGrid
