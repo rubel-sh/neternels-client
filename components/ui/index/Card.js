@@ -5,8 +5,9 @@ import useBorders from "@/hooks/useBorders";
 import Tilt from "react-parallax-tilt";
 import { CardText, DownloadBtn, StatusText } from "@/components/styledComponents/stylesComponents";
 
-const Card = () => {
+const Card = ({ device }) => {
     const { colorMode } = useColorMode();
+    const { codename, model, maintainer, supports, kernelVersion, updatedAt, status } = device;
     return (
         <GridItem>
             {/* <Tilt
@@ -57,7 +58,7 @@ const Card = () => {
                         color={useColors().CardText}
                         zIndex="1"
                     >
-                        RAVEN
+                        {codename}
                     </Text>
                     {/* Overlay */}
                     <Box
@@ -76,16 +77,23 @@ const Card = () => {
                 <Box px="clamp(20px ,1.5vw,25px)" py="clamp(5px, 2.5vw,15px)">
                     {/* Device Name */}
                     <Text fontSize="clamp(20px,3vw,28px)" fontWeight={700} mb="clamp(10px,1.5vw,15px)">
-                        Google Pixel 6 Pro
+                        {model}
                     </Text>
 
                     {/* Maintainer */}
-                    <CardText>Maintainer: Rubel Hossain</CardText>
-                    <CardText>Supports: Android 13</CardText>
-                    <CardText>Kernel Version: 4.13.203</CardText>
-                    <CardText>Last Update: 16 March 2023</CardText>
+                    <CardText>Maintainer: {maintainer}</CardText>
+                    <CardText>Supports: Android {supports}</CardText>
+                    <CardText>Kernel Version: {kernelVersion}</CardText>
                     <CardText>
-                        Status: <StatusText>Active</StatusText>
+                        Last Update:{" "}
+                        {new Date(updatedAt).toLocaleDateString("en-US", {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric",
+                        })}
+                    </CardText>
+                    <CardText>
+                        Status: <StatusText>{status}</StatusText>
                     </CardText>
                     <Box textAlign="center" w="full" mt="15px">
                         <DownloadBtn>Get Kernel</DownloadBtn>

@@ -27,8 +27,10 @@ export const DownloadBtn = ({ children }) => (
 
 export const StatusText = ({ children }) => {
     return (
-        <Text as="span" color={children === "Active" ? "green.600" : "red.600"}>
+        <Text as="span" color={children === "Active" || "active" ? "green.600" : "red.600"}>
             {children}
         </Text>
     );
 };
+
+export const DashboardSectionTitle = ({ children }) => <Text fontSize="clamp(18px ,1.5vw,25px)">{children}</Text>;

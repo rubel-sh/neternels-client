@@ -1,12 +1,11 @@
 import Head from "next/head";
 import HeroSection from "@/components/ui/index/HeroSection";
 import KernelsDeveloped from "@/components/ui/index/KernelsDeveloped";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardsContainer from "@/components/ui/index/CardsContainer";
 import HomepageLayout from "@/components/Layout/HomepageLayout";
 
-export default function Home() {
-    const [devices, setDevices] = useState([...Array(12)]);
+export default function Home({ allDevices }) {
     return (
         <>
             <Head>
@@ -18,8 +17,20 @@ export default function Home() {
             <HomepageLayout>
                 <HeroSection />
                 <KernelsDeveloped />
-                <CardsContainer devices={devices} />
+                <CardsContainer allDevices={allDevices} />
             </HomepageLayout>
         </>
     );
 }
+
+export const getServerSideProps = async () => {
+    const url = process.env.NEXT_PUBLIC_API_URI + "api/devices";
+    const res = await fetch(url);
+    const data = await res.json();
+
+    return {
+        props: {
+            allDevices: data,
+        },
+    };
+};

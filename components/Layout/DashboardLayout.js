@@ -1,4 +1,4 @@
-import { Box, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { Component } from "react";
 import DashboardSidebar from "../sharedComponents/DashboardSidebar";
@@ -46,7 +46,7 @@ const DashboardLayout = ({ children }) => {
     return (
         <>
             <Header />
-            <SimpleGrid gridTemplateColumns="280px 1fr" h={"full"}>
+            {/* <SimpleGrid gridTemplateColumns="280px 1fr" h={"full"}>
                 <GridItem>
                     <DashboardSidebar navLinks={navLinks} />
                 </GridItem>
@@ -55,7 +55,16 @@ const DashboardLayout = ({ children }) => {
                         {children}
                     </Box>
                 </GridItem>
-            </SimpleGrid>
+            </SimpleGrid> */}
+            <Flex>
+                <Box minW={"280px"} style={{ position: "sticky", top: "0" }}>
+                    <DashboardSidebar navLinks={navLinks} />
+                </Box>
+
+                <Box fontSize={"4xl"} fontWeight={600} textAlign="center" px={4} py="5" w="full" overflowY={"auto"}>
+                    {children}
+                </Box>
+            </Flex>
         </>
     );
 };
