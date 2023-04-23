@@ -13,8 +13,8 @@ export const DownloadBtn = ({ children }) => (
     <Link href="/download/ginkgo">
         <Button
             as={motion.button}
-            whileTap={{ scale: 0.95 }}
-            _hover={{ boxShadow: `-3px 3px #4C5DBB`, transform: "translate(3px,-3px)" }}
+            // whileTap={{ boxShadow: `0px 0px #2336A1`, transform: "translate(0px,0px)", transition: { duration: 0.01 } }}
+            // _hover={{ boxShadow: `-3px 3px #4C5DBB`, transform: "translate(3px,-3px)" }}
             bg={useColors().bodyBgColor}
             rounded="xl"
             width="100%"
@@ -34,3 +34,9 @@ export const StatusText = ({ children }) => {
 };
 
 export const DashboardSectionTitle = ({ children }) => <Text fontSize="clamp(18px ,1.5vw,25px)">{children}</Text>;
+
+export const ActionBtn = ({ children, onClick }) => (
+    <Button onClick={onClick} size="sm" variant="outline">
+        {children}
+    </Button>
+);

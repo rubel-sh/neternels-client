@@ -93,7 +93,7 @@ const Card = ({ device }) => {
                         })}
                     </CardText>
                     <CardText>
-                        Status: <StatusText>{status}</StatusText>
+                        Status: <StatusText>{status ? "Active" : "Inactive"}</StatusText>
                     </CardText>
                     <Box textAlign="center" w="full" mt="15px">
                         <DownloadBtn>Get Kernel</DownloadBtn>
